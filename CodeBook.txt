@@ -1,5 +1,9 @@
 CodeBook
 
+Data Frame:
+	The Tidy Data Frame Consists of 10299 observations with 68 variables
+	The Final Data Frame Consists of 180 observations with 68 variables
+
 Variables Naming Scheme:
 	Starts with Time_: Time Series Data
 	Starts with Frequency_: Frequency Series Data
@@ -20,6 +24,9 @@ Variables Naming Scheme:
 
 	Subject: Denotes the id of the person who performed the Experiment
 	Activity: Denotes the Activity performed while collecting data
+
+Values:
+	The Variables in the Data are normalized and bounded within [-1,1].
 
 Transformations applied to Raw Data:
 	Raw Data: https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones
