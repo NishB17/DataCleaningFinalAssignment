@@ -1,0 +1,106 @@
+CodeBook
+
+Variables Naming Scheme:
+	Starts with Time_: Time Series Data
+	Starts with Frequency_: Frequency Series Data
+	 
+	Contains Body: Values Obtained from Accelerometer and Gyroscope Sensors attached to body
+	Contains Gravity: Values Obtained from measurement of Gravity
+	 
+	Contains mean: it is the mean/average of the Value
+	Contains std: it is the standard deviation of the Value
+	  
+	Contains X/Y/Z: Denotes the axis to which the data corresponds to
+	 
+	Other Norms:
+		Acc: Denotes Acceleration captured by Accelerometer
+		Gyro: Denotes the Angles captured by the Gyroscope
+		Jerk: Denotes the Momentary Jerk in Signal calculated by differentiaing signals with respect to time
+		Mag: Denotes Magnitude of the Signal calculated by using Euclidean Norm
+
+	Subject: Denotes the id of the person who performed the Experiment
+	Activity: Denotes the Activity performed while collecting data
+
+Transformations applied to Raw Data:
+	Raw Data: https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones
+	1)  Merging the Subject,X_Test,Y_Test into a Temporary Table with Corresponding Column Names from features.txt using cbind
+	2)	Merging the Subject,X_Train,Y_Train into a Temporary Table with Corresponding Column Names from features.txt using cbind
+	3)	Merging data from steps 1 and 2 into a new table user rbind
+	4)  Removing data not related to mean and standard deviation using select
+	5)  Replacing Activity names from activity_labels.txt into tables using inner join
+	6)  Renamed Column names to be more descriptive by removing "." formed due to read table and to remove duplicate values
+	7)	Expanded "f" and "t" into "Frequency" and "Time" in Column names for better legibility
+	8)	Added "_" between words for better readablilty
+	9)  Grouped the data with Subject and Action using the group_by function
+	10) Summarized the Grouped Data to display mean for all columns for each group with Summarize_all function
+	
+
+All Variables:
+	Time_Body_Acc_mean_X
+	Time_Body_Acc_mean_Y
+	Time_Body_Acc_mean_Z
+	Time_Body_Acc_std_X
+	Time_Body_Acc_std_Y
+	Time_Body_Acc_std_Z
+	Time_Gravity_Acc_mean_X
+	Time_Gravity_Acc_mean_Y
+	Time_Gravity_Acc_mean_Z
+	Time_Gravity_Acc_std_X
+	Time_Gravity_Acc_std_Y
+	Time_Gravity_Acc_std_Z
+	Time_Body_AccJerk_mean_X
+	Time_Body_AccJerk_mean_Y
+	Time_Body_AccJerk_mean_Z
+	Time_Body_AccJerk_std_X
+	Time_Body_AccJerk_std_Y
+	Time_Body_AccJerk_std_Z
+	Time_Body_Gyro_mean_X
+	Time_Body_Gyro_mean_Y
+	Time_Body_Gyro_mean_Z
+	Time_Body_Gyro_std_X
+	Time_Body_Gyro_std_Y
+	Time_Body_Gyro_std_Z
+	Time_Body_GyroJerk_mean_X
+	Time_Body_GyroJerk_mean_Y
+	Time_Body_GyroJerk_mean_Z
+	Time_Body_GyroJerk_std_X
+	Time_Body_GyroJerk_std_Y
+	Time_Body_GyroJerk_std_Z
+	Time_Body_AccMag_mean
+	Time_Body_AccMag_std
+	Time_Gravity_AccMag_mean
+	Time_Gravity_AccMag_std
+	Time_Body_AccJerkMag_mean
+	Time_Body_AccJerkMag_std
+	Time_Body_GyroMag_mean
+	Time_Body_GyroMag_std
+	Time_Body_GyroJerkMag_mean
+	Time_Body_GyroJerkMag_std
+	Frequency_Body_Acc_mean_X
+	Frequency_Body_Acc_mean_Y
+	Frequency_Body_Acc_mean_Z
+	Frequency_Body_Acc_std_X
+	Frequency_Body_Acc_std_Y
+	Frequency_Body_Acc_std_Z
+	Frequency_Body_AccJerk_mean_X
+	Frequency_Body_AccJerk_mean_Y
+	Frequency_Body_AccJerk_mean_Z
+	Frequency_Body_AccJerk_std_X
+	Frequency_Body_AccJerk_std_Y
+	Frequency_Body_AccJerk_std_Z
+	Frequency_Body_Gyro_mean_X
+	Frequency_Body_Gyro_mean_Y
+	Frequency_Body_Gyro_mean_Z
+	Frequency_Body_Gyro_std_X
+	Frequency_Body_Gyro_std_Y
+	Frequency_Body_Gyro_std_Z
+	Frequency_Body_AccMag_mean
+	Frequency_Body_AccMag_std
+	Frequency_Body_AccJerkMag_mean
+	Frequency_Body_AccJerkMag_std
+	Frequency_Body_GyroMag_mean
+	Frequency_Body_GyroMag_std
+	Frequency_Body_GyroJerkMag_mean
+	Frequency_Body_GyroJerkMag_std
+	Subject
+	Activity
